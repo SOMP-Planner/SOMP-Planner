@@ -9,7 +9,7 @@
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
-  <!-- THIS SCRIPT MAKES LATEX WORK -->
+  <!-- LATEX SCRIPT -->
   <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
   <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
 
@@ -19,9 +19,9 @@
     .publication-title { font-size: 2.5rem; margin-bottom: 1rem; }
     .publication-authors { font-size: 1.2rem; color: #4a4a4a; margin-bottom: 1rem; }
     .publication-links { margin-top: 1.5rem; }
-    .teaser { margin-top: 2rem; margin-bottom: 2rem; text-align: center;}
     .abstract-text { font-size: 1.1rem; line-height: 1.6; }
-    img { max-width: 100%; border-radius: 10px; box-shadow: 0 0 10px rgba(0,0,0,0.1);}
+    .video-container { margin-top: 2rem; margin-bottom: 2rem; }
+    .video-caption { margin-top: 0.5rem; font-size: 0.9rem; color: #666; }
   </style>
 </head>
 
@@ -31,19 +31,32 @@
     <div class="hero-body">
       <div class="container is-max-desktop has-text-centered">
         
+        <!-- TITLE -->
         <h1 class="title is-1 publication-title">SOMP: Stiffness Optimized Motion Planner</h1>
         
+        <!-- AUTHORS -->
         <div class="is-size-5 publication-authors">
-          <span class="author-block">David Seyser</span>
-          <span class="author-block">Micheal Schebek</span>
+          <span class="author-block">David Seyser</span> &nbsp;&bull;&nbsp;
+          <span class="author-block">Micheal Schebek</span> &nbsp;&bull;&nbsp;
           <span class="author-block">Lucas Pammer</span>
         </div>
 
+        <!-- LINKS (PAPER + REPO) -->
         <div class="publication-links">
+          <!-- Paper Link -->
           <span class="link-block">
             <a href="#" class="button is-normal is-rounded is-dark">
               <span class="icon"><i class="fas fa-file-pdf"></i></span>
               <span>Paper</span>
+            </a>
+          </span>
+          
+          <!-- Github Link (ADDED THIS) -->
+          <span class="link-block">
+            <!-- Replace '#' with your actual repo URL -->
+            <a href="https://github.com/YOUR_ORG/YOUR_REPO" class="button is-normal is-rounded is-dark">
+              <span class="icon"><i class="fab fa-github"></i></span>
+              <span>Code</span>
             </a>
           </span>
         </div>
@@ -51,6 +64,7 @@
     </div>
   </section>
 
+  <!-- ABSTRACT -->
   <section class="section">
     <div class="container is-max-desktop">
       <div class="columns is-centered has-text-centered">
@@ -68,6 +82,44 @@
             </p>
           </div>
         </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- VIDEOS SECTION (ADDED THIS) -->
+  <section class="section">
+    <div class="container is-max-desktop">
+      <h2 class="title is-3 has-text-centered">Video Results</h2>
+      
+      <!-- Example: Two videos side by side -->
+      <div class="columns is-centered">
+        
+        <!-- Video 1 -->
+        <div class="column">
+          <div class="content has-text-centered">
+            <video id="video1" autoplay controls muted loop playsinline width="100%">
+              <!-- Replace with your actual video file path (e.g., ./static/videos/demo1.mp4) -->
+              <source src="./images/erat.mp4" type="video/mp4">
+            </video>
+            <p class="video-caption">
+              <strong>Standard Planner:</strong> High vibration observed.
+            </p>
+          </div>
+        </div>
+
+        <!-- Video 2 -->
+        <div class="column">
+          <div class="content has-text-centered">
+            <video id="video2" autoplay controls muted loop playsinline width="100%">
+              <!-- Replace with your actual video file path -->
+              <source src="https://interactive-examples.mdn.mozilla.net/media/cc0-videos/flower.mp4" type="video/mp4">
+            </video>
+            <p class="video-caption">
+              <strong>SOMP (Ours):</strong> Improved stability and finish.
+            </p>
+          </div>
+        </div>
+
       </div>
     </div>
   </section>

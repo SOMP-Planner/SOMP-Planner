@@ -3,12 +3,15 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Project Name</title>
+  <title>SOMP: Stiffness Optimized Motion Planner</title>
 
-  <!-- Load Fonts and CSS -->
   <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro" rel="stylesheet">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+  <!-- THIS SCRIPT MAKES LATEX WORK -->
+  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+  <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
 
   <style>
     body { font-family: 'Noto Sans', sans-serif; }
@@ -28,56 +31,26 @@
     <div class="hero-body">
       <div class="container is-max-desktop has-text-centered">
         
-        <!-- Title -->
-        <h1 class="title is-1 publication-title">Your Paper Title Here</h1>
+        <h1 class="title is-1 publication-title">SOMP: Stiffness Optimized Motion Planner</h1>
         
-        <!-- Authors -->
         <div class="is-size-5 publication-authors">
-          <span class="author-block">Author One<sup>1</sup>,</span>
-          <span class="author-block">Author Two<sup>2</sup>,</span>
-          <span class="author-block">Author Three<sup>1</sup></span>
+          <span class="author-block">David Seyser</span>
+          <span class="author-block">Micheal Schebek</span>
+          <span class="author-block">Lucas Pammer</span>
         </div>
 
-        <div class="is-size-5 publication-authors">
-          <span class="author-block"><sup>1</sup>University of X,</span>
-          <span class="author-block"><sup>2</sup>Google Research</span>
-        </div>
-
-        <!-- Buttons (PDF, Code, etc) -->
         <div class="publication-links">
-          <!-- PDF Link -->
           <span class="link-block">
-            <a href="https://arxiv.org/your-paper-link" class="button is-normal is-rounded is-dark">
+            <a href="#" class="button is-normal is-rounded is-dark">
               <span class="icon"><i class="fas fa-file-pdf"></i></span>
               <span>Paper</span>
             </a>
           </span>
-          <!-- Code Link -->
-          <span class="link-block">
-            <a href="https://github.com/your-repo" class="button is-normal is-rounded is-dark">
-              <span class="icon"><i class="fab fa-github"></i></span>
-              <span>Code</span>
-            </a>
-          </span>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- Teaser Image -->
-  <section class="section">
-    <div class="container is-max-desktop">
-      <div class="teaser">
-        <!-- Upload an image named 'teaser.jpg' to your repo, or change this link -->
-        <img src="https://dummyimage.com/800x400/ddd/000.jpg&text=Teaser+Image+Here" alt="Teaser">
-        <h2 class="subtitle has-text-centered">
-          This is the caption for your main result or method diagram.
-        </h2>
-      </div>
-    </div>
-  </section>
-
-  <!-- Abstract -->
   <section class="section">
     <div class="container is-max-desktop">
       <div class="columns is-centered has-text-centered">
@@ -85,40 +58,19 @@
           <h2 class="title is-3">Abstract</h2>
           <div class="content has-text-justified abstract-text">
             <p>
-              Replace this text with your paper's abstract. We propose a novel method for X that achieves Y. 
-              Unlike previous approaches, our method is able to handle Z constraints efficiently.
+              Industrial robots offer greater flexibility and lower cost than CNC machines for milling applications, but suffer from low rigidity and vibration that compromise precision and surface quality. Existing motion planners typically rely on sampling-based methods that struggle with external forces and robot dynamics, while compliance is often handled as post-processing compensation rather than integrated into planning.
             </p>
             <p>
-              This is the second paragraph of the abstract. It explains the results briefly.
+              We propose <strong>SOMP</strong> (Stiffness Optimized Motion Planner), a novel framework that maintains maximum structural stiffness throughout robotic milling operations. Our approach samples inverse kinematics solutions at each CAM-generated waypoint and selects optimal configurations through multi-objective optimization considering manipulability, joint limits, and stiffness.
+            </p>
+            <p>
+              The stiffness objective is quantified using the Cartesian stiffness matrix \(\mathbf{K}_c = (\mathbf{J}\mathbf{K}_j^{-1}\mathbf{J}^T)^{-1}\), where \(\mathbf{J}\) is the geometric Jacobian and \(\mathbf{K}_j\) is the joint stiffness matrix. We evaluate SOMP against industry-standard motion planners in 2D milling operations (pocket milling and hole drilling) on aluminum, measuring shape tolerance, surface quality, vibration via accelerometers, and acoustic emissions via microphone. We hypothesize that stiffness optimization reduces vibrations and noise while improving surface finish and extending tool life, thereby enhancing the precision and feasibility of robotic machining for high-quality manufacturing.
             </p>
           </div>
         </div>
       </div>
     </div>
   </section>
-
-  <!-- BibTeX -->
-  <section class="section" id="BibTeX">
-    <div class="container is-max-desktop content">
-      <h2 class="title">BibTeX</h2>
-      <pre><code>@article{yourname2024title,
-  author    = {Doe, John and Smith, Jane},
-  title     = {Your Paper Title},
-  journal   = {Conference Name},
-  year      = {2024},
-}</code></pre>
-    </div>
-  </section>
-
-  <footer class="footer">
-    <div class="container">
-      <div class="content has-text-centered">
-        <p>
-          Website template based on <a href="https://github.com/nerfies/nerfies.github.io">Nerfies</a>.
-        </p>
-      </div>
-    </div>
-  </footer>
 
 </body>
 </html>
